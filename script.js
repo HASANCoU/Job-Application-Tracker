@@ -6,7 +6,7 @@ const rejectedJobContainer = document.getElementById("rejected-job-container");
 const emptyJobSection = document.getElementById("empty-job");
 const interviewCount = document.getElementById("interview-count");
 const rejectedCount = document.getElementById("rejected-count");
-const totalJobElements = document.querySelectorAll(".total-jobs");
+const totalJobCount = document.getElementById("total-job");
 
 function allCards() {
   return Array.from(allJobContainer.querySelectorAll(".card"));
@@ -53,9 +53,7 @@ function updateCountersAndViews() {
   const interviewed = cards.filter((card) => card.dataset.status === "interviewed");
   const rejected = cards.filter((card) => card.dataset.status === "rejected");
 
-  totalJobElements.forEach((element) => {
-    element.textContent = cards.length;
-  });
+  totalJobCount.textContent = cards.length;
   interviewCount.textContent = interviewed.length;
   rejectedCount.textContent = rejected.length;
 

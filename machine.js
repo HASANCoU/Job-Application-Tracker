@@ -3,11 +3,14 @@ function showOnly(id){
     const interviewedJob = document.getElementById("interviewed-job");
     const rejectedJob = document.getElementById("rejected-job");
     const emptyJob = document.getElementById("empty-job");
+
     const interviewCount = Number(document.getElementById("interview-count")?.textContent || 0);
     const rejectedCount = Number(document.getElementById("rejected-count")?.textContent || 0);
+    const activeTabCount = document.getElementById("active-tab-count");
 
     const totalJobs = document.querySelectorAll("#all-job-container .card").length;
     window.currentTab = id;
+    
     const tabAll = document.getElementById("tab-all");
     const tabInterview = document.getElementById("tab-interview");
     const tabRejected = document.getElementById("tab-rejected");
@@ -16,9 +19,21 @@ function showOnly(id){
     tabInterview.classList.remove("primary");
     tabRejected.classList.remove("primary");
 
-    if (id === "all-job-container") tabAll.classList.add("primary");
-    if (id === "interviewed-job") tabInterview.classList.add("primary");
-    if (id === "rejected-job") tabRejected.classList.add("primary");
+    if (id === "all-job-container") {
+        tabAll.classList.add("primary");
+        activeTabCount.textContent = totalJobs;
+    } 
+
+    if (id === "interviewed-job") {
+        tabInterview.classList.add("primary");
+        activeTabCount.textContent = interviewCount;
+    }
+    if (id === "rejected-job") {
+        tabRejected.classList.add("primary");
+        activeTabCount.textContent = rejectedCount;
+    }
+
+    
 
     // Hide all sections first
     allJob.classList.add("hidden");
