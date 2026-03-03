@@ -7,6 +7,13 @@ querySelector/querySelectorAll can cath elements like CSS Selector using id, cla
 
 querySelector catch only first matching element whereas querySelectorAll can catch all matching element.
 
+getElementById can catch only one element usign ID.
+getElementsByClassName can catch more than one elements using class name.
+
+querySelector/querySelectorAll can cath elements like CSS Selector using id, class, tag name. 
+
+querySelector catch only first matching element whereas querySelectorAll can catch all matching element.
+
 ### 2. How do you create and insert a new element into the DOM?
 
 Step-01: create element
