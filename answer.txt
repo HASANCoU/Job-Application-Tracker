@@ -1,4 +1,4 @@
-### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+###1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
 getElementById can catch only one element usign ID.
 getElementsByClassName can catch more than one elements using class name.
